@@ -41,27 +41,35 @@ int main() {
         atY += dirY;
     }
 
-    int minX = 14, maxX = 0, minY = 14, maxY = 0;
+    for (int j = 0; j < 30; j++) {
+        for (int k = 0; k < 15; k++) {
+            //flip left to right
+            int temp = v[j][k];
+            v[j][k] = v[j][29 - k];
+            v[j][29 - k] = temp;
+        }
+    }
 
+    int minX = 30, minY = 30, maxX = 0, maxY = 0;
     for (int j = 0; j < 30; j++) {
         for (int k = 0; k < 30; k++) {
             if (v[j][k] != 0) {
-                if (j < minY) minY = j;
-                if (j > maxY) maxY = j;
                 if (k < minX) minX = k;
                 if (k > maxX) maxX = k;
+                if (j < minY) minY = j;
+                if (j > maxY) maxY = j;
             }
         }
     }
 
     for (int j = minY; j < maxY + 1; j++) {
-        for (int k = 30-maxX; k >= minX; k--) {
+        for (int k = minX; k < maxX + 1; k++) {
             if (v[j][k] < 10 && v[j][k] != 0) cout << " " << v[j][k];
             else if (v[j][k] != 0) cout << v[j][k];
             else cout << "  ";
-            if (k != minX) cout << " ";
-            else cout << endl;
+            if (k != maxX) cout << " ";
         }
+        cout << endl;
     }
 
     return 0;
