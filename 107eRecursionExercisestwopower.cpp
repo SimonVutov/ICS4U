@@ -1,14 +1,20 @@
 #include <iostream>
-using namespace std; //Simon Vutov
+#include <vector>
+using namespace std; // Simon Vutov
 
-int recursive_twoPow (int n) {
-    if (n == 0) { cout << 1 << " "; return 1; }
-    int val = 2 * recursive_twoPow(n - 1);
-    cout << val << " ";
-    return val;
+void recursive_twoPow(vector<int> &twopower, int i) {
+    if (i == (int)twopower.size()) return;
+    twopower[i] = twopower[i - 1] * 2;
+    recursive_twoPow(twopower, i + 1);
 }
 
 int main() {
-    int n; cin >> n;
-    recursive_twoPow(n-1);
+    int n;
+    cin >> n;
+    vector<int> twopower(n, 1);
+
+    recursive_twoPow(twopower, 1);
+
+    for (int i = 0; i < n; i++) cout << twopower[i] << " ";
+    return 0;
 }

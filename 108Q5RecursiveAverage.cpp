@@ -5,8 +5,8 @@
 #include <cmath>
 using namespace std; // Simon Vutov
 
-double avg(vector<double> v, int i = 0) {
-    if (i == v.size()) return 0;
+double avg(vector<double>& v, int i = 0) {
+    if (i == (int)v.size()) return 0;
     return (v[i] + avg(v, i + 1) * (v.size() - i - 1)) / (v.size() - i);
 }
 
