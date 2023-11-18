@@ -8,15 +8,15 @@ long long gcd(long long x, long long y) {
 }
 
 long long lcm(long long a, long long b) {
-    return (a / gcd(a, b)) * b;
+    return a * b / gcd(a, b);
 }
 
-long long FindReinventedFactorial(long long n){
-    return n == 1 ? 1 : lcm(n, FindReinventedFactorial(n - 1));
+long long fractorial(long long n){
+    return n == 1 ? 1 : lcm(n, fractorial(n - 1));
 }
 
 int main() {
     int n;
     cin >> n;
-    cout << FindReinventedFactorial(n) << endl;
+    cout << fractorial(n) << endl;
 }

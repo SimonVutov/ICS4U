@@ -2,9 +2,8 @@
 #include <vector>
 using namespace std; // Simon Vutov
 
-int gcd (int x, int y) {
-    if (y == 0) return x;
-    return gcd(y, x % y);
+int gcd (int x, int y) { // Recursive GCD
+    return y == 0 ? x : gcd(y, x % y);
 }
 
 int main() {
