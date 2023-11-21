@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/simonvutov/Documents/GitHub/ICS4U",
-      "program": "/Users/simonvutov/Documents/GitHub/ICS4U/build/Debug/outDebug"
+      "cwd": "/Users/simonvutov/Downloads/ICS4U",
+      "program": "/Users/simonvutov/Downloads/ICS4U/build/Debug/outDebug"
     }
   ]
 }
