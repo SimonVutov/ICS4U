@@ -3,10 +3,16 @@
 #include <algorithm>
 using namespace std; // Simon Vutov
 
-void output(vector<int> arr, int l, int r) {
-    for (int i = l; i < r; i++) {
-        cout << arr[i] << " ";
+vector<int>& createRndArray (int length, int min, int max) {
+    vector<int>* arr = new vector<int>(length, 0);
+    for (int i = 0; i < length; i++) {
+        (*arr)[i] = rand() % (max - min + 1) + min;
     }
+    return *arr;
+}
+
+void output(vector<int> arr, int l, int r) {
+    for (int i = l; i < r; i++) cout << arr[i] << " ";
     cout << endl;
 }
 
@@ -14,11 +20,9 @@ int linearSearch(vector<int> arr, int element) {
     for (int i = 0; i < (int)arr.size(); i++) {
         output(arr, i, (int)arr.size());
         if (arr[i] == element) {
-            cout << "found at index " << i << endl;
             return i;
         }
     }
-    cout << "not found" << endl;
     return -1;
 }
 
@@ -27,10 +31,8 @@ int binarySearch(vector<int> arr, int element) {
     int right = (int)arr.size() - 1;
     while (left <= right) {
         output(arr, left, right + 1);
-        int middle = (left + right) / 2;
+        int middle = (left + right + 1) / 2;
         if (arr[middle] == element) {
-            cout << element << endl;
-            cout << "found at index " << middle << endl;
             return middle;
         } else if (arr[middle] < element) {
             left = middle + 1;
@@ -38,11 +40,17 @@ int binarySearch(vector<int> arr, int element) {
             right = middle - 1;
         }
     }
-    cout << "not found" << endl;
     return -1;
 }
 
 int main() {
+    // how to use createRndArray:
+
+    /*vector<int> randomArray = createRndArray(10, 0, 100);
+    for (int i = 0; i < (int)randomArray.size(); i++) {
+        cout << randomArray[i] << " ";
+    }*/
+
     int length, element;
     cin >> length >> element;
     vector<int> arr(length, 0);
@@ -53,8 +61,10 @@ int main() {
     sort(arr.begin(), arr.end());
 
     cout << "Linear Search" << endl;
-    linearSearch(arr, element);
+    int out = linearSearch(arr, element);
+    cout << (out == -1 ? "not found" : "found at index " + to_string(out)) << endl;
     cout << endl;
     cout << "Binary Search" << endl;
     binarySearch(arr, element);
+    cout << (out == -1 ? "not found" : "found at index " + to_string(out)) << endl;
 }
