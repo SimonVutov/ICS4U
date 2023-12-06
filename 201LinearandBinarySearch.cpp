@@ -11,12 +11,12 @@ vector<int>& createRndArray (int length, int min, int max) {
     return *arr;
 }
 
-void output(vector<int> arr, int l, int r) {
+void output(vector<int>& arr, int l, int r) {
     for (int i = l; i < r; i++) cout << arr[i] << " ";
     cout << endl;
 }
 
-int linearSearch(vector<int> arr, int element) {
+int linearSearch(vector<int>& arr, int element) {
     for (int i = 0; i < (int)arr.size(); i++) {
         output(arr, i, (int)arr.size());
         if (arr[i] == element) {
@@ -26,7 +26,7 @@ int linearSearch(vector<int> arr, int element) {
     return -1;
 }
 
-int binarySearch(vector<int> arr, int element) {
+int binarySearch(vector<int>& arr, int element) {
     int left = 0;
     int right = (int)arr.size() - 1;
     while (left <= right) {

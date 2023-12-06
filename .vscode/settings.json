@@ -64,7 +64,8 @@
     "compare": "cpp",
     "concepts": "cpp",
     "algorithm": "cpp",
-    "106asieveoferatosthenes": "cpp"
+    "106asieveoferatosthenes": "cpp",
+    "charconv": "cpp"
   },
   "C_Cpp_Runner.msvcBatchPath": "",
   "C_Cpp_Runner.cCompilerPath": "clang",
