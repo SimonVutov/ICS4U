@@ -31,9 +31,9 @@ void out2(string* arr, int n) {
 void insertionSort(double arr[], int n, bool print=true) {
     for (int i = 1; i < n; i++) {
         if (print) out(arr, n);
-        int key = arr[i];
+        double key = arr[i];
         int j = i - 1;
-        
+
         while (j >= 0 && arr[j] > key) {
             arr[j + 1] = arr[j];
             j--;
@@ -76,19 +76,16 @@ int main() {
     //Q3
     cout << "Q3" << endl;
     string str[] = {"mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune"};
-    int size = sizeof(str) / sizeof(str[0]);
-    stringInsertionSort(str, size);
+    stringInsertionSort(str, sizeof(str) / sizeof(str[0])); // sort the array, printing out each step
     cout << endl;
 
     //Q4
     cout << "Q4" << endl;
     cin >> n;
     double arr2[n];
-    for (int i = 0; i < n; i++) {
-        cin >> arr2[i];
-    }
-    insertionSort(arr2, n, false);
-    cout << (n % 2 ? arr2[n / 2] : ((arr2[n / 2] + arr2[n / 2 - 1]) / 2.0)) << endl;
+    for (int i = 0; i < n; i++) cin >> arr2[i]; // take in input array
+    insertionSort(arr2, n, false); // sort that array
+    cout << (n % 2 ? arr2[n / 2] : ((arr2[n / 2] + arr2[n / 2 - 1]) / 2.0)) << endl; // print out median
 
     /*
     Q5
