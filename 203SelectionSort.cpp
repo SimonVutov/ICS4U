@@ -3,42 +3,50 @@
 #include <algorithm>
 using namespace std; // Simon Vutov
 
- //outputs the array
+//outputs the array of integers
 void out (int arr[], int n) {
     for (int i = 0; i < n; i++) {
         cout << arr[i] << " ";
     }
     cout << endl;
 }
- //sorts the string
-void SelectionSort (string& s, int n) {
+
+//outputs the array of strings
+void out (string s[], int n) {
     for (int i = 0; i < n; i++) {
-        cout << s << endl;
-        int minID = i;
-        for (int j = i + 1; j < n; j++) {
-            if (s[j] < s[minID]) minID = j;
-        }
-        char temp = s[i];
-        s[i] = s[minID];
-        s[minID] = temp;
+        cout << s[i] << " ";
     }
-    cout << s << endl;
+    cout << endl;
+}
+
+ //sorts the string
+void SelectionSort (string s[], int n) {
+    for (int i = 0; i < n; i++) {
+        out(s, n);
+        int maxID = i;
+        for (int j = i; j < n; j++) {
+            if (s[j] > s[maxID]) maxID = j;
+        }
+        swap(s[i], s[maxID]);
+    }
+    out(s, n);
 }
  //sorts the array
 void selectionSort (int arr[], int n, bool print = false) {
-    for (int i = 0; i < n; i++) {
+    for (int i = n-1; i >= 0; i--) {
         if (print) out(arr, n);
-        int minID = i;
-        for (int j = i + 1; j < n; j++) {
-            if (arr[j] < arr[minID]) minID = j;
+        int maxID = i;
+        for (int j = i - 1; j > 0; j--) {
+            if (arr[j] > arr[maxID]) maxID = j;
         }
         int temp = arr[i];
-        arr[i] = arr[minID];
-        arr[minID] = temp;
+        arr[i] = arr[maxID];
+        arr[maxID] = temp;
     }
     if (print) out(arr, n);
 }
- //max k elements
+
+//max k elements
 void selectSort (int arr[], int n, int k) {
     for (int i = 0; i < k; i++) {
         int maxID = n - 1 - i;
@@ -54,13 +62,10 @@ void selectSort (int arr[], int n, int k) {
 int main() {
     //Q1
     cout << "Q1" << endl;
-    string s = "Robert Brian Victor David Scott";
-    cout << "Brian Robert Victor David Scott" << endl;
-    cout << "Brian David Victor Robert Scott" << endl;
-    cout << "Brian David Robert Victor Scott" << endl;
-    cout << "Brian David Robert Scott Victor" << endl;
-    cout << "Brian David Robert Scott Victor" << endl;
-
+    //Brian Robert Victor David Scott
+    string s[] = {"Brian", "Robert", "Victor", "David", "Scott"};
+    int n = sizeof(s) / sizeof(s[0]);
+    SelectionSort(s, n);
 
     //cout << "Q2" << endl;
     //Q2
@@ -78,8 +83,8 @@ int main() {
 
     cout << "Q4" << endl;
     int arr[] = {8, 9, 6, 1, 2, 4};
-    int n = sizeof(arr) / sizeof(arr[0]);
-    selectionSort(arr, n, true);
+    int sz = sizeof(arr) / sizeof(arr[0]);
+    selectionSort(arr, sz, true);
     /*
     Q4
     (a) Given the set of data

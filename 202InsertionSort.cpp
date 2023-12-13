@@ -29,20 +29,21 @@ void out2(string* arr, int n) {
 
 // sorts an array of integers
 void insertionSort(double arr[], int n, bool print=true) {
-    for (int i = 1; i < n; i++) {
-        if (print) out(arr, n);
-        double key = arr[i];
-        int j = i - 1;
+    for (int i = 1; i < n; i++) { // for each element in the array
+        if (print) out(arr, n); // print out the array
+        double key = arr[i]; // set the key to the current element
+        int j = i - 1; // set j to the previous element
 
-        while (j >= 0 && arr[j] > key) {
-            arr[j + 1] = arr[j];
-            j--;
+        while (j >= 0 && arr[j] > key) { // while j is not out of bounds and the previous element is larger than the current element
+            arr[j + 1] = arr[j]; // set the current element to the previous element
+            j--; // decrement j
         }
         arr[j + 1] = key;
     }
     if (print) out(arr, n);
 }
 
+// sorts an array of integers
 void stringInsertionSort(string arr[], int n) {
     for (int i = 1; i < n; i++) {
         out2(arr, n);
