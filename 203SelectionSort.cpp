@@ -21,36 +21,34 @@ void out (string s[], int n) {
 
  //sorts the string
 void SelectionSort (string s[], int n) {
-    for (int i = 0; i < n; i++) {
+    for (int i = n-1; i >= 0; i--) {
         out(s, n);
         int maxID = i;
-        for (int j = i; j < n; j++) {
+        for (int j = 0; j < i; j++) {
             if (s[j] > s[maxID]) maxID = j;
         }
         swap(s[i], s[maxID]);
     }
-    out(s, n);
 }
  //sorts the array
 void selectionSort (int arr[], int n, bool print = false) {
-    for (int i = n-1; i >= 0; i--) {
+    for (int i = 0; i < n; i++) {
         if (print) out(arr, n);
-        int maxID = i;
-        for (int j = i - 1; j > 0; j--) {
-            if (arr[j] > arr[maxID]) maxID = j;
+        int minID = i;
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] < arr[minID]) minID = j;
         }
         int temp = arr[i];
-        arr[i] = arr[maxID];
-        arr[maxID] = temp;
+        arr[i] = arr[minID];
+        arr[minID] = temp;
     }
-    if (print) out(arr, n);
 }
 
 //max k elements
 void selectSort (int arr[], int n, int k) {
     for (int i = 0; i < k; i++) {
-        int maxID = n - 1 - i;
-        for (int j = n - 1 - i; j >= 0; j--) {
+        int maxID = 0;
+        for (int j = 0; j < n-i; j++) {
             if (arr[j] > arr[maxID]) maxID = j;
         }
         int temp = arr[n - 1 - i];
@@ -63,7 +61,7 @@ int main() {
     //Q1
     cout << "Q1" << endl;
     //Brian Robert Victor David Scott
-    string s[] = {"Brian", "Robert", "Victor", "David", "Scott"};
+    string s[] = {"Robert", "Brian", "Victor", "David", "Scott"};
     int n = sizeof(s) / sizeof(s[0]);
     SelectionSort(s, n);
 

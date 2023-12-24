@@ -47,39 +47,27 @@ int main() {
     cout << " 3  2  3  5 (7  8)" << endl;
     cout << "(3  2) 3  5  7  8" << endl;
     cout << " 2 (3  3) 5  7  8" << endl;
-    cout << " 2  3 (3  5) 7  8" << endl;
-    cout << " 2  3  3 (5  7) 8" << endl;
-    cout << " 2  3  3  5 (7  8)" << endl;
-    cout << "(2  3) 3  5  7  8" << endl;
-    cout << " 2 (3  3) 5  7  8" << endl;
-    cout << " 2  3 (3  5) 7  8" << endl;
-    cout << " 2  3  3 (5  7) 8" << endl;
-    cout << " 2  3  3  5 (7  8)" << endl;
-    cout << "(2  3) 3  5  7  8" << endl;
-    cout << " 2 (3  3) 5  7  8" << endl;
-    cout << " 2  3 (3  5) 7  8" << endl;
-    cout << " 2  3  3 (5  7) 8" << endl;
-    cout << " 2  3  3  5 (7  8)" << endl;
-    cout << " 2  3  3  5  7  8" << endl;
+    
+    cout << "2  3  3  5  7  8" << endl;
 
     //Q2 swap the comparison sign to sort in descending order
 
     cout << "Q3" << endl;
 
-    cout << "2 9 4 6 1 7 4" << endl;
-    cout << "2 4 9 6 1 7 4" << endl;
-    cout << "2 4 6 9 1 7 4" << endl;
-    cout << "2 4 6 1 9 7 4" << endl;
-    cout << "2 4 6 1 7 9 4" << endl;
-    cout << "2 4 6 1 7 4 9" << endl;
+    cout << "(2  9) 4  6  1  7  4" << endl;
+    cout << " 2 (9  4) 6  1  7  4" << endl;
+    cout << " 2  4 (9  6) 1  7  4" << endl;
+    cout << " 2  4  6 (9  1) 7  4" << endl;
+    cout << " 2  4  6  1 (9  7) 4" << endl;
+    cout << " 2  4  6  1  7 (9  4)" << endl;
+    cout << " 2  4  6  1 (7  4) 9" << endl;
+    cout << " 2  4  6 (1  4) 7  9" << endl;
+    cout << " 2  4 (6  1) 4  7  9" << endl;
+    cout << " 2 (4  1) 6  4  7  9" << endl;
+    cout << "(2  1) 4  6  4  7  9" << endl;
+    cout << "1  2  4  6  4  7  9" << endl;
 
-    cout << "2 4 6 1 7 4 9" << endl;
-    cout << "2 4 6 1 7 4 9" << endl;
-    cout << "2 4 6 1 4 7 9" << endl;
-    cout << "2 4 6 1 4 7 9" << endl;
-    cout << "2 4 1 6 4 7 9" << endl;
-    cout << "2 1 4 4 6 7 9" << endl;
-    cout << "1 2 4 4 6 7 9" << endl;
+    cout << "Q4" << endl;
 
     int n;
     cin >> n;
