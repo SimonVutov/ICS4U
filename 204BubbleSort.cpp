@@ -3,7 +3,7 @@
 #include <algorithm>
 using namespace std; // Simon Vutov
 
-int shakeSort(vector <int> v, int n) {
+int shakeSort(vector <double> v, int n) {
     int swaps = 0;
     for (int i = 0; i < n; i++) {
         bool end = true;
@@ -44,9 +44,11 @@ int main() {
     cout << " 3 (3  2) 7  5  8" << endl;
     cout << " 3  2 (3  7) 5  8" << endl;
     cout << " 3  2  3 (7  5) 8" << endl;
-    cout << " 3  2  3  5 (7  8)" << endl;
     cout << "(3  2) 3  5  7  8" << endl;
     cout << " 2 (3  3) 5  7  8" << endl;
+    cout << " 2  3 (3  5) 7  8" << endl;
+    cout << "(2  3) 3  5  7  8" << endl;
+    cout << " 2 (3  3) 5 7  8" << endl;
     
     cout << "2  3  3  5  7  8" << endl;
 
@@ -71,7 +73,7 @@ int main() {
 
     int n;
     cin >> n;
-    vector <int> v(n);
+    vector <double> v(n);
     for (int i = 0; i < n; i++) {
         cin >> v[i];
     }

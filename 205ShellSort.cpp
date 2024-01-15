@@ -29,7 +29,7 @@ int getK (int n) {
 int nextK (int n) {return (n - 1) / 3;}
 
 void printOut (int k, vector <int>& v) {
-    cout << k << "k sorted list:";
+    cout << k << "k sort list:";
     for (int i = 0; i < (int)v.size(); i++) {
         if (i % 10 == 0) {
             cout << endl;
@@ -69,7 +69,7 @@ int main() {
     cout << endl;
 
     //Q3 Shell sort is faster than insertion sort because it compares elements that are far apart first, rather than adjacent. This means that it can move elements further back in the array faster than insertion sort can.
-
+    
     cout << "Q5" << endl;
     int n;
     cin >> n;
