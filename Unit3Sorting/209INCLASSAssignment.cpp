@@ -22,7 +22,7 @@ void kSort(vector <int>& v, int k) {
 int getK (int n) {
     int k = 4;
     if (n >= 1 && n <= 4) return 1;
-    if (n >= 5 && n <= 9) return 2;
+    if (n >= 5 && n <= 8) return 2;
     while (2 * k + 1 < n / 2) {
         k = 2 * k + 1;
     }
@@ -33,7 +33,6 @@ int nextK (int n) {
     if (n == 1) return 0;
     if (n == 2) return 1;
     if (n == 4) return 2;
-    if (n == 9) return 4;
     return (n - 1) / 2;
 }
 
