@@ -24,7 +24,7 @@ public:
   const int getNumerator() { return numerator; }
   const int getDenominator() { return denominator; }
   void setNumerator(int numerator) { this->numerator = numerator; }
-  void setDenominator(int denominator) { this->denominator = denominator; }
+  void setDenominator(int denominator);
   string toString();
   void add(const Fraction &f) { *this = *this + f; }
   void subtract(const Fraction &f) { *this = *this - f; }

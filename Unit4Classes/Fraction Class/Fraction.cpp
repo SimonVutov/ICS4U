@@ -28,6 +28,15 @@ Fraction::Fraction(const Fraction &other) { // duplicate
 
 Fraction::~Fraction() { count--; }
 
+void Fraction::setDenominator(int denominator) {
+  if (denominator == 0) {
+    cout << "Denominator cannot be 0, set to 1 instead" << endl;
+    this->denominator = 1;
+  } else {
+    this->denominator = denominator;
+  }
+}
+
 Fraction Fraction::operator+(const Fraction &rhs) {
   Fraction result;
   result.setNumerator(this->numerator * rhs.denominator +
